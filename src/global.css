@@ -1,0 +1,214 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+    text-decoration: none;
+}
+
+
+.wrapper {
+    max-width: 790px;
+    margin: 0 auto;
+}
+.marginWrap{
+    margin: 5px;
+}
+
+.vacCard{
+    margin-bottom: 20px ;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: 10px;
+    grid-template-areas: 
+      "vacn vacn "                     
+      "vacs vacs"
+      "vacC vacC"
+      "btn btn"
+      "logo logo   "
+    ;
+    min-height: 115px;
+    padding: 10px;
+    border : 1px solid #e7e7e7;
+  
+  
+   
+   
+}
+
+.vacName {
+    display: flex;
+    justify-content: flex-start;
+    font-size: 17px;
+    color: #4682B4;
+    grid-area: vacn;
+    margin-bottom: 3px;
+   
+}
+
+.vacSalary {
+ display: flex;
+ justify-content: flex-end;
+ color: #4682B4;
+ grid-area: vacs;
+}
+.closepng {
+    width: 30px; 
+   align-self: flex-end;
+    
+}
+.closepng:hover{
+    width: 33px;
+}
+.closepng:active{
+    width: 32px;
+}
+
+.btn_wrapper{
+    
+    display: flex;
+    justify-content: flex-start;
+    grid-area: btn;
+}
+.btn_vacCard{
+  
+    
+    background-color: #6633FF;
+    color: #fff;
+    border: 1px solid #bbb;
+    width: 92 px;
+    height: 31px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    
+}
+
+.btn_vacCard:hover{
+    background-color: #333399;
+    color: #bbb;
+}
+
+.vacCity{
+    display: flex;
+    justify-content: flex-start;
+    color: #999;
+    font-size: 16px;
+    grid-area: vacC;
+   margin-bottom: 4px;
+}
+
+
+
+
+@keyframes showModal {
+    0% {
+        opacity: 0;
+        transform: translateX(500px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+.modal{
+        position: fixed;
+        top: 0; right: 0; left: 0; bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.041);
+        animation: showModal .3s ease-out;
+}
+
+
+.modalContent {
+        display: flex;
+        padding: 10px;
+        flex-direction: column;
+       
+       background: #ffffff;
+        width: 600px;
+        height: 300px;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.144);
+        border-radius: 10px;
+       
+}     
+.modalTitle {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #ddd;
+}
+
+.imLogo{
+    max-width: 60;
+    max-height: 30px;
+}
+.logo{
+    grid-area: logo;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logoModal{
+  max-width: 70px;
+}
+
+.btn{
+    color:blue
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+}
+ul.pagination{ 
+    display: flex;
+    padding-inline-start: 0;
+}
+li{
+    list-style: none;
+    outline: none;
+    border-radius: 3px;
+    width:20px;
+    text-align: center;
+    cursor: pointer;
+    margin-right: 4px;
+   
+    color: #4682B4;
+    background: #fefefe;
+   
+   
+   
+}  
+li:hover{
+    background: #bbb;
+}
+
+li.active{
+    color: #4682B4;
+    background: #e9e9e9;
+    
+}  
+.prev,
+.next {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    max-height: 20px;
+    margin-left: 6px;
+    margin-right: 6px;
+    cursor:pointer;
+    color: #4682B4;
+    background: #fff
+}
+
+
+.next:hover{
+    background:#bbb;
+}
+.prev:hover {
+    background:#bbb;
+}

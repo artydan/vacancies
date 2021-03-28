@@ -1,41 +1,79 @@
 import React from "react";
 import "../global.css";
-import close from "./close.svg";
 
 function ModalVac({ vacancie, isModalOpen, closeModal }) {
   if (isModalOpen) {
     return (
-      <div className="modal">
-        <div className="modalContent">
-          <img
-            className="closepng"
-            onClick={() => closeModal()}
-            src={close}
-            alt="close"
-          />
+      <div className="modal" onClick={() => closeModal()}>
+        <div className="modalContent" onClick={(e) => e.stopPropagation()}>
+          <div className="closePngwrapper">
+            <div className="closepng" onClick={() => closeModal()}></div>
+          </div>
+
           <div className="modalTitle">Подробная информация</div>
           <div className="info">
             {vacancie.employer && (
-              <div className="vacOrganiz">
+              <div className="vacInfo ">
                 Работадатель : "{vacancie.employer?.name}"
               </div>
             )}
 
-            <div className="schedule">
-              {" "}
+            {(vacancie.salary?.from && vacancie.salary?.to && (
+              <div className="vacInfo modalSalary">
+                Зарплата: {vacancie.salary?.from.toLocaleString("ru-RU")} -{" "}
+                {vacancie.salary?.to.toLocaleString("ru-RU")}{" "}
+                {vacancie.salary?.currency === "RUR"
+                  ? "руб."
+                  : vacancie.salary?.currency}
+              </div>
+            )) ||
+              (vacancie.salary?.from && (
+                <div className="vacInfo modalSalary">
+                  Зарплата: {vacancie.salary?.from.toLocaleString("ru-RU")}{" "}
+                  {vacancie.salary?.currency === "RUR"
+                    ? "руб."
+                    : vacancie.salary?.currency}
+                </div>
+              )) ||
+              (vacancie.salary?.to && (
+                <div className="vacInfo modalSalary">
+                  Зарплата : {vacancie.salary?.to.toLocaleString("ru-RU")}{" "}
+                   {vacancie.salary?.currency === "RUR"
+                    ? "руб."
+                    : vacancie.salary?.currency}
+                </div>
+              ))}
+
+            <div className="vacInfo schedule">
               Занятость : {vacancie.schedule?.name}
             </div>
             {vacancie.address && (
-              <div className="address">
-                {" "}
+              <div className="vacInfo address">
                 Адресс : {vacancie.address?.city} , {vacancie.address?.street} ,
                 {vacancie.address?.building}
               </div>
             )}
 
-            <div>
-             
-            </div>
+            {vacancie.snippet?.requirement && (
+              <div className="vacInfo requirement">
+                Требования : {vacancie.snippet?.requirement}
+              </div>
+            )}
+            {vacancie.snippet?.responsibility && (
+              <div className="vacInfo responsobility">
+                Обязанности : {vacancie.snippet?.responsibility}
+              </div>
+            )}
+
+            {vacancie.employer.logo_urls?.original && (
+              <div className="logomodal">
+                <img
+                  className="iamLogomodal"
+                  src={vacancie.employer.logo_urls?.original}
+                  alt="logo"
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>

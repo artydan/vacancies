@@ -7,7 +7,7 @@ function Vacancies(props) {
   let [vacns, setVacn] = useState([]);
   let [selectedVac, setSelectedVac] = useState();
   let [isModalOpen, setIsModalOpen] = useState(false);
-  let [perPage, setperpage] = useState(20);
+  let [perPage, setperpage] = useState(10);
   let [currentPage, setCurrentPage] = useState(1);
   let indexOFLast = currentPage * perPage;
   let indexOgFirst = indexOFLast - perPage;
@@ -28,7 +28,7 @@ function Vacancies(props) {
       setCurrentPage(++currentPage);
     } 
   };
-
+ 
   let prevPage = () => {
     if (currentPage !==1) {
       setCurrentPage(--currentPage)
@@ -51,16 +51,19 @@ function Vacancies(props) {
     setIsModalOpen(true);
   };
 
+
   return (
     <div className="wrapper">
       {vacOnPage.map((vacn) => (
-        <VacCard
+        <VacCard 
+        
           key={vacn.id}
           vacancie={vacn}
           openVacancieHandler={openVacancieHandler}
         ></VacCard>
       ))}
       <ModalVac
+    
         vacancie={selectedVac}
         isModalOpen={isModalOpen}
         closeModal={closeModal}

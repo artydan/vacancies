@@ -49,7 +49,7 @@ function ModalVac({ vacancie, isModalOpen, closeModal }) {
             </div>
             {vacancie.address && (
               <div className="vacInfo address">
-                Адресс : {vacancie.address?.city} , {vacancie.address?.street} ,
+                Адрес : {vacancie.address?.city} , {vacancie.address?.street} ,
                 {vacancie.address?.building}
               </div>
             )}
@@ -74,6 +74,12 @@ function ModalVac({ vacancie, isModalOpen, closeModal }) {
                 />
               </div>
             )}
+            <div className="submit">
+              <div className="subm"> Откликнуться </div>
+              <input className="phoneNum" type="text" placeholder="Номер телефона"></input>
+              <input className="email" type="email" placeholder="Email"></input>
+              <input className="submitBtn" type="submit" value="Отправить"></input>
+            </div>
           </div>
         </div>
       </div>

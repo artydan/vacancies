@@ -16,13 +16,12 @@
   margin-bottom: 20px;
   display: grid;
   grid-gap: 10px;
-  grid-template-rows: 10px;
   grid-template-areas:
     "vacn vacn "
-    "vacs vacs"
+    "vacRes vacs"
     "vacC vacC"
-    "btn btn"
-    "logo logo   ";
+    "btn  logo ";
+    
   min-height: 115px;
   padding: 10px;
   border: 1px solid #e7e7e7;
@@ -206,6 +205,8 @@ li.active {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 20px;
+  border-radius: 3px;
   max-height: 20px;
   margin-left: 6px;
   margin-right: 6px;
@@ -227,3 +228,52 @@ li.active {
    max-width: 100px;
    max-height: 60px;
  }
+
+.vacResp{
+  color: #333;
+  font-size: 16px;
+  margin-top: 4px;
+  grid-area:vacRes;
+}
+
+.phoneNum, .email {
+  outline: none;
+  display: block;
+  width: 56%;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  line-height: 40px;
+  background: #E9EFF6;
+  border-width: 0;
+  border-radius: 20px;
+  
+}
+
+.submit{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submitBtn{
+  background-color: #6633ff;
+  color: #fff;
+  border: 1px solid #bbb;
+  max-width: 135px;
+  height: 31px;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+}
+
+.subm{
+  margin-top: 70px;
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.submitBtn:hover {
+  background-color: #333399;
+  color: #bbb;
+}

@@ -277,3 +277,29 @@ li.active {
   background-color: #333399;
   color: #bbb;
 }
+
+@media (max-width: 569px) {
+  .vacName{
+    font-size: 15px;
+  }
+  .subm {
+    margin-top: 57px;
+  }
+  .vacSalary{
+    font-size: 14px;
+  }
+
+  .vacResp {
+    font-size: 13px;
+  }
+  .modalTitle{
+   margin-top: 15px;
+   margin-bottom: 30px;
+  }
+}
+
+@media(max-width: 460px){
+  .vacInfo {
+    font-size: 14px
+  }
+}

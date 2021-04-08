@@ -50,10 +50,14 @@ function Vacancies(props) {
 
     setIsModalOpen(true);
   };
-
-
+   
+  useEffect(() => {
+    const body = document.querySelector('body');
+    body.style.overflow = isModalOpen === true ? 'hidden' : 'auto';
+  }, [isModalOpen])
+   
   return (
-    <div className="wrapper">
+    <div className= "wrapper">
       {vacOnPage.map((vacn) => (
         <VacCard 
         

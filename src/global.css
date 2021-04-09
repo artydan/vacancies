@@ -89,6 +89,9 @@
   text-align: center;
   cursor: pointer;
   outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn_vacCard:hover {
@@ -190,10 +193,13 @@ li {
   text-align: center;
   cursor: pointer;
   margin-right: 4px;
-  user-select: none;
+  user-select: none; 
   color: #4682b4;
   background: #fefefe;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
+
 li:hover {
   background: #bbb;
 }
@@ -216,7 +222,10 @@ li.active {
   color: #4682b4;
   background: #fff;
   user-select: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
+
 
 .next:hover {
   background: #bbb;
@@ -256,6 +265,7 @@ li.active {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .submitBtn{
@@ -267,8 +277,12 @@ li.active {
   border-radius: 15px;
   text-align: center;
   cursor: pointer;
+  user-select: none;
   outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 }
+
 
 .subm{
   margin-top: 70px;

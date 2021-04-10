@@ -226,6 +226,12 @@ li.active {
   -webkit-tap-highlight-color: transparent;
 }
 
+.prev:active{
+  background: #fff;
+}
+.next:active {
+  background: #bbb;
+}
 
 .next:hover {
   background: #bbb;
@@ -294,33 +300,17 @@ li.active {
   background-color: #333399;
   color: #bbb;
 }
-@media (max-width: 320px) {
-  
+.searchInput {
+  margin-bottom: 10px;
+  max-width: 50%;
+  border: 2px solid #4682b4;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+  color: #444;
 }
-  
-
-/* @media (max-width: 569px) {
-  .vacName{
-    font-size: 15px;
-  }
-  .subm {
-    margin-top: 57px;
-  }
-  .vacSalary{
-    font-size: 14px;
-  }
-
-  .vacResp {
-    font-size: 13px;
-  }
-  .modalTitle{
-   margin-top: 15px;
-   margin-bottom: 30px;
-  }
+.inputwrapper {
+  display: flex;
+  justify-content: center;
 }
-
-@media(max-width: 460px){
-  .vacInfo {
-    font-size: 14px
-  }
-} */

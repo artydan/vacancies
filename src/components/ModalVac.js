@@ -1,21 +1,32 @@
-import { logRoles } from "@testing-library/dom";
+import { useState, useEffect } from "react";
 import React from "react";
 import "../global.css";
 
-function ModalVac({ vacancie, isModalOpen, closeModal }) {
+function ModalVac({vacancies, vacancie, isModalOpen, closeModal }) {
+  const [detailedVacancieInfo, setdetailedVacancieInfo] = useState()
+  
+  useEffect(()=> {
+   fetch(`https://api.hh.ru/vacancies/${vacancie?.id}`)
+   .then((res) => ( res.json()))
+   .then((result)=> setdetailedVacancieInfo(result))
+   
+ },[vacancie])  
+    
+ 
   if (isModalOpen) {
+    
     return (
       <div className="modal" onClick={() => closeModal()}>
         <div className="modalContent" onClick={(e) => e.stopPropagation()}>
           <div className="closePngwrapper">
             <div className="closepng" onClick={() => closeModal()}></div>
           </div>
-
+          
           <div className="modalTitle">Подробная информация</div>
           <div className="info">
-            {vacancie.employer && (
+            {detailedVacancieInfo.employer && (
               <div className="vacInfo ">
-                Работадатель : "{vacancie.employer?.name}"
+                Работадатель : "{detailedVacancieInfo.employer?.name}"
               </div>
             )}
 
@@ -63,6 +74,11 @@ function ModalVac({ vacancie, isModalOpen, closeModal }) {
             {vacancie.snippet?.responsibility && (
               <div className="vacInfo responsobility">
                 Обязанности : {vacancie.snippet?.responsibility}
+              </div>
+            )} 
+             {detailedVacancieInfo.experience?.name && (
+              <div className="vacInfo responsobility">
+                Опыт работы : {detailedVacancieInfo.experience?.name}
               </div>
             )}
 

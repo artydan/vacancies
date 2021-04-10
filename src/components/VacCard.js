@@ -1,8 +1,9 @@
 import React from "react";
 import "../global.css";
 
-function Vaccard({ vacancie, openVacancieHandler,  }) {
+function Vaccard({vacancies ,search,vacancie, openVacancieHandler,  }) {
   let logoUrl = vacancie.employer.logo_urls?.original; 
+  
  
   return (
     <div>

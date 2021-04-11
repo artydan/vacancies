@@ -1,4 +1,3 @@
-import './App.css';
 import Vacancies from './components/Vacancies'
 
 

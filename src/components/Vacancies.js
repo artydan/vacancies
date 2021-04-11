@@ -16,7 +16,6 @@ function Vacancies(props) {
     val.name.toLowerCase().startsWith(searchVac.toLowerCase())
   );
   let vacOnPage = vacns.slice(indexOgFirst, indexOFLast);
-
   let pagesCount = vacns.length / perPage;
   let pages = [];
   for (let i = 1; i <= pagesCount; i++) {
@@ -48,10 +47,9 @@ function Vacancies(props) {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-  const openVacancieHandler = (vacancie) => {
-    //открытsь модальное окно и обновить стэйт текущей вакансии бтек вак пропс модалвап
-    setSelectedVac(vacancie);
 
+  const openVacancieHandler = (vacancie) => {
+    setSelectedVac(vacancie);
     setIsModalOpen(true);
   };
 
@@ -72,11 +70,10 @@ function Vacancies(props) {
       </div>
       {vacOnPage.map((vacn) => (
         <VacCard
-          vacancies={vacns}
           key={vacn.id}
           vacancie={vacn}
           openVacancieHandler={openVacancieHandler}
-        ></VacCard>
+        />
       ))}
       <ModalVac
         vacancies={vacns}
@@ -92,7 +89,7 @@ function Vacancies(props) {
         currentPage={currentPage}
         prevPage={prevPage}
         nextPage={nextPage}
-      ></Pagbuttons>
+      />
     </div>
   );
 }

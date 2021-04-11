@@ -2,20 +2,17 @@ import { useState, useEffect } from "react";
 import React from "react";
 import "../global.css";
 
-function ModalVac({vacancies, vacancie, isModalOpen, closeModal }) {
-  const [detailedVacancieInfo, setdetailedVacancieInfo] = useState()
-  
-  useEffect(()=> {
-   fetch(`https://api.hh.ru/vacancies/${vacancie?.id}`)
-   .then((res) => ( res.json()))
-   .then((result)=> setdetailedVacancieInfo(result))
-   
- },[vacancie])  
-    
- 
+function ModalVac({ vacancies, vacancie, isModalOpen, closeModal }) {
+  const [detailedVacancieInfo, setdetailedVacancieInfo] = useState();
+
+  useEffect(() => {
+    fetch(`https://api.hh.ru/vacancies/${vacancie?.id}`)
+      .then((res) => res.json())
+      .then((result) => setdetailedVacancieInfo(result));
+  }, [vacancie]);
+
   if (!isModalOpen) {
-     return null
-    
+    return null;
   } else {
     return (
       <div className="modal" onClick={() => closeModal()}>
@@ -23,7 +20,6 @@ function ModalVac({vacancies, vacancie, isModalOpen, closeModal }) {
           <div className="closePngwrapper">
             <div className="closepng" onClick={() => closeModal()}></div>
           </div>
-          
           <div className="modalTitle">Подробная информация</div>
           <div className="info">
             {detailedVacancieInfo.employer && (
@@ -31,7 +27,6 @@ function ModalVac({vacancies, vacancie, isModalOpen, closeModal }) {
                 Работадатель : "{detailedVacancieInfo.employer?.name}"
               </div>
             )}
-
             {(vacancie.salary?.from && vacancie.salary?.to && (
               <div className="vacInfo modalSalary">
                 Зарплата: {vacancie.salary?.from.toLocaleString("ru-RU")} -{" "}
@@ -52,7 +47,7 @@ function ModalVac({vacancies, vacancie, isModalOpen, closeModal }) {
               (vacancie.salary?.to && (
                 <div className="vacInfo modalSalary">
                   Зарплата : {vacancie.salary?.to.toLocaleString("ru-RU")}{" "}
-                   {vacancie.salary?.currency === "RUR"
+                  {vacancie.salary?.currency === "RUR"
                     ? "руб."
                     : vacancie.salary?.currency}
                 </div>
@@ -77,8 +72,8 @@ function ModalVac({vacancies, vacancie, isModalOpen, closeModal }) {
               <div className="vacInfo responsobility">
                 Обязанности : {vacancie.snippet?.responsibility}
               </div>
-            )} 
-             {detailedVacancieInfo.experience?.name && (
+            )}
+            {detailedVacancieInfo.experience?.name && (
               <div className="vacInfo responsobility">
                 Опыт работы : {detailedVacancieInfo.experience?.name}
               </div>
@@ -95,9 +90,21 @@ function ModalVac({vacancies, vacancie, isModalOpen, closeModal }) {
             )}
             <div className="submit">
               <div className="subm"> Откликнуться </div>
-              <input className="phoneNum" type="tel" placeholder="Номер телефона"></input>
-              <input className="email" type="email" placeholder="Email"></input>
-              <input className="submitBtn" type="submit" value="Отправить"></input>
+              <input
+                className="phoneNum"
+                type="tel"
+                placeholder="Номер телефона"
+              ></input>
+              <input 
+                className="email" 
+                type="email" 
+                placeholder="Email"
+              ></input>
+              <input
+                className="submitBtn"
+                type="submit"
+                value="Отправить"
+              ></input>
             </div>
           </div>
         </div>

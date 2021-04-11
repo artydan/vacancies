@@ -19,7 +19,8 @@
   grid-gap: 10px;
   grid-template-areas:
     "vacn vacn "
-    "vacRes vacs"
+    "vacs vacs"
+    "vacRes vacRes"
     "vacC vacC"
     "btn  logo ";   
   min-height: 115px;

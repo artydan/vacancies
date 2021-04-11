@@ -1,9 +1,7 @@
 import React from "react";
 import "../global.css";
 
-function Vaccard({vacancies ,search,vacancie, openVacancieHandler,  }) {
-  let logoUrl = vacancie.employer.logo_urls?.original; 
-  
+function Vaccard({vacancie, openVacancieHandler}) {
  
   return (
     <div>
@@ -16,26 +14,26 @@ function Vaccard({vacancies ,search,vacancie, openVacancieHandler,  }) {
             )}
         {vacancie.employer.logo_urls?.original && (
           <div className="logo">
-            <img className="imLogo" src={logoUrl} alt="logo" />
+            <img className="imLogo" src={vacancie.employer.logo_urls?.original} alt="logo" />
           </div>
         )}
         {(vacancie.salary?.from && vacancie.salary?.to && (
           <div className="vacSalary">
             {vacancie.salary?.from.toLocaleString("ru-RU")} - {vacancie.salary?.to.toLocaleString("ru-RU")}{" "}
-            {vacancie.salary?.currency === "RUR" ? "руб.": vacancie.salary?.currency}
+            {vacancie.salary?.currency === "RUR" ? "RUB": vacancie.salary?.currency}
           </div>
         )) 
           ||
           (vacancie.salary?.from && (
             <div className="vacSalary">
               {vacancie.salary?.from.toLocaleString("ru-RU")}{" "}
-              {vacancie.salary?.currency === "RUR" ? "руб.": vacancie.salary?.currency}
+              {vacancie.salary?.currency === "RUR" ? "RUB": vacancie.salary?.currency}
             </div>
           )) ||
           (vacancie.salary?.to && (
             <div className="vacSalary">
               {vacancie.salary?.to.toLocaleString("ru-RU")}{" "}
-              {vacancie.salary?.currency === "RUR" ? "руб.": vacancie.salary?.currency}
+              {vacancie.salary?.currency === "RUR" ? "RUB": vacancie.salary?.currency}
             </div>
           )) ||
           <div className="vacSalary">Зп не указана</div>

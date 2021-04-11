@@ -13,8 +13,10 @@ function ModalVac({vacancies, vacancie, isModalOpen, closeModal }) {
  },[vacancie])  
     
  
-  if (isModalOpen) {
+  if (!isModalOpen) {
+     return null
     
+  } else {
     return (
       <div className="modal" onClick={() => closeModal()}>
         <div className="modalContent" onClick={(e) => e.stopPropagation()}>
@@ -93,7 +95,7 @@ function ModalVac({vacancies, vacancie, isModalOpen, closeModal }) {
             )}
             <div className="submit">
               <div className="subm"> Откликнуться </div>
-              <input className="phoneNum" type="text" placeholder="Номер телефона"></input>
+              <input className="phoneNum" type="tel" placeholder="Номер телефона"></input>
               <input className="email" type="email" placeholder="Email"></input>
               <input className="submitBtn" type="submit" value="Отправить"></input>
             </div>
@@ -101,8 +103,6 @@ function ModalVac({vacancies, vacancie, isModalOpen, closeModal }) {
         </div>
       </div>
     );
-  } else {
-    return null;
   }
 }
 

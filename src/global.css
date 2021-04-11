@@ -312,5 +312,5 @@ li.active {
 }
 .inputwrapper {
   display: flex;
-  justify-content: end;
+  justify-content: flex-start;
 }

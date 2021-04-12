@@ -9,8 +9,8 @@ function Vacancies(props) {
   let [selectedVac, setSelectedVac] = useState();
   let [isModalOpen, setIsModalOpen] = useState(false);
   let [perPage, setperpage] = useState(10);
-  let [currentPage, setCurrentPage] = useState(1);
-  let indexOFLast = currentPage * perPage;
+  let [currentPageNumber, setCurrentPageNumber] = useState(1);
+  let indexOFLast = currentPageNumber * perPage;
   let indexOgFirst = indexOFLast - perPage;
   vacns = vacns.filter((val) =>
     val.name.toLowerCase().startsWith(searchVac.toLowerCase())
@@ -23,18 +23,18 @@ function Vacancies(props) {
   }
 
   let chandgeCurrentPageHandler = (pageCount) => {
-    setCurrentPage(pageCount);
+    setCurrentPageNumber(pageCount);
   };
 
   let nextPageHandler = () => {
-    if (currentPage < pageNumbers.length) {
-      setCurrentPage(++currentPage);
+    if (currentPageNumber < pageNumbers.length) {
+      setCurrentPageNumber(++currentPageNumber);
     }
   };
 
   let prevPageHandler = () => {
-    if (currentPage !== 1) {
-      setCurrentPage(--currentPage);
+    if (currentPageNumber !== 1) {
+      setCurrentPageNumber(--currentPageNumber);
     }
   };
 
@@ -86,7 +86,7 @@ function Vacancies(props) {
         pageNumbers={pageNumbers}
         chandgeCurrentPageHandler={chandgeCurrentPageHandler}
         className="pagBtn"
-        currentPage={currentPage}
+        currentPageNumber={currentPageNumber}
         prevPageHandler={prevPageHandler}
         nextPageHandler={nextPageHandler}
       />

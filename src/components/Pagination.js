@@ -1,7 +1,7 @@
 import React from "react";
 
 function Pagbuttons({
-  currentPage,
+  currentPageNumber,
   chandgeCurrentPageHandler,
   pageNumbers,
   prevPageHandler,
@@ -16,7 +16,7 @@ function Pagbuttons({
         {pageNumbers.map((pageNumber) => (
           <li
             key={pageNumber}
-            className={pageNumber === currentPage ? "active" : " disabled"}
+            className={pageNumber === currentPageNumber ? "active" : " disabled"}
             onClick={() => chandgeCurrentPageHandler(pageNumber)}
           >
             {pageNumber}

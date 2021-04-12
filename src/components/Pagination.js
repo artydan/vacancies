@@ -3,7 +3,7 @@ import React from "react";
 function Pagbuttons({
   currentPage,
   chandgeCurrentPageHandler,
-  pages,
+  pageNumbers,
   prevPageHandler,
   nextPageHandler,
 }) {
@@ -13,7 +13,7 @@ function Pagbuttons({
         «
       </div>
       <ul className="pagination">
-        {pages.map((pageNumber) => (
+        {pageNumbers.map((pageNumber) => (
           <li
             key={pageNumber}
             className={pageNumber === currentPage ? "active" : " disabled"}

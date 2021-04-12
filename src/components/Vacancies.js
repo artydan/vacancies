@@ -17,9 +17,9 @@ function Vacancies(props) {
   );
   let vacOnPage = vacns.slice(indexOgFirst, indexOFLast);
   let pagesCount = vacns.length / perPage;
-  let pages = [];
+  let pageNumbers = [];
   for (let i = 1; i <= pagesCount; i++) {
-    pages.push(i);
+    pageNumbers.push(i);
   }
 
   let chandgeCurrentPageHandler = (pageCount) => {
@@ -27,7 +27,7 @@ function Vacancies(props) {
   };
 
   let nextPageHandler = () => {
-    if (currentPage < pages.length) {
+    if (currentPage < pageNumbers.length) {
       setCurrentPage(++currentPage);
     }
   };
@@ -83,7 +83,7 @@ function Vacancies(props) {
       />
 
       <Pagination
-        pages={pages}
+        pageNumbers={pageNumbers}
         chandgeCurrentPageHandler={chandgeCurrentPageHandler}
         className="pagBtn"
         currentPage={currentPage}

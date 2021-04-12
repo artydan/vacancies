@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ModalVac from "./ModalVac";
 import VacCard from "./VacCard";
-import Pagbuttons from "./Pagbuttons";
+import Pagination from "./Pagination";
 
 function Vacancies(props) {
   let [vacns, setVacn] = useState([]);
@@ -82,7 +82,7 @@ function Vacancies(props) {
         closeModal={closeModal}
       />
 
-      <Pagbuttons
+      <Pagination
         pages={pages}
         chandgeCurrentPageHandler={chandgeCurrentPageHandler}
         className="pagBtn"

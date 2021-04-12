@@ -26,13 +26,13 @@ function Vacancies(props) {
     setCurrentPage(pageCount);
   };
 
-  let nextPage = () => {
+  let nextPageHandler = () => {
     if (currentPage < pages.length) {
       setCurrentPage(++currentPage);
     }
   };
 
-  let prevPage = () => {
+  let prevPageHandler = () => {
     if (currentPage !== 1) {
       setCurrentPage(--currentPage);
     }
@@ -87,8 +87,8 @@ function Vacancies(props) {
         chandgeCurrentPageHandler={chandgeCurrentPageHandler}
         className="pagBtn"
         currentPage={currentPage}
-        prevPage={prevPage}
-        nextPage={nextPage}
+        prevPageHandler={prevPageHandler}
+        nextPageHandler={nextPageHandler}
       />
     </div>
   );

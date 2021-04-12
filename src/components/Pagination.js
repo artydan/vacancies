@@ -4,12 +4,12 @@ function Pagbuttons({
   currentPage,
   chandgeCurrentPageHandler,
   pages,
-  prevPage,
-  nextPage,
+  prevPageHandler,
+  nextPageHandler,
 }) {
   return (
     <nav>
-      <div className="prev" onClick={() => prevPage()}>
+      <div className="prev" onClick={() => prevPageHandler()}>
         «
       </div>
       <ul className="pagination">
@@ -23,7 +23,7 @@ function Pagbuttons({
           </li>
         ))}
       </ul>
-      <div className="next" onClick={() => nextPage()}>
+      <div className="next" onClick={() => nextPageHandler()}>
         »
       </div>
     </nav>

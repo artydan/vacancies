@@ -16,7 +16,9 @@ function Pagbuttons({
         {pageNumbers.map((pageNumber) => (
           <li
             key={pageNumber}
-            className={pageNumber === currentPageNumber ? "active" : " disabled"}
+            className={
+              pageNumber === currentPageNumber ? "active" : " disabled"
+            }
             onClick={() => chandgeCurrentPageHandler(pageNumber)}
           >
             {pageNumber}

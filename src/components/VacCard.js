@@ -43,7 +43,6 @@ function Vaccard({ vacancie, openVacancieHandler }) {
                 : vacancie.salary?.currency}
             </div>
           ))}
-
         <div className="vacCity"> {vacancie.address?.city}</div>
         <div className="btn_wrapper">
           <button

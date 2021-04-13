@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import ModalVac from "./ModalVac";
+import ModalView from "./ModalView.js";
 import VacCard from "./VacCard";
 import Pagination from "./Pagination";
+import DetailedVacancie from "./DetailedVacancie.js";
 
 function Vacancies(props) {
   let [vacns, setVacn] = useState([]);
@@ -57,7 +58,6 @@ function Vacancies(props) {
     const body = document.querySelector("body");
     body.style.overflow = isModalOpen === true ? "hidden" : "auto";
   }, [isModalOpen]);
-
   return (
     <div className="wrapper">
       <div className="inputwrapper">
@@ -75,13 +75,9 @@ function Vacancies(props) {
           openVacancieHandler={openVacancieHandler}
         />
       ))}
-      <ModalVac
-        vacancies={vacns}
-        vacancie={selectedVac}
-        isModalOpen={isModalOpen}
-        closeModal={closeModal}
-      />
-
+      <ModalView isModalOpen={isModalOpen} closeModal={closeModal}>
+        <DetailedVacancie vacancie={selectedVac} />
+      </ModalView>
       <Pagination
         pageNumbers={pageNumbers}
         chandgeCurrentPageHandler={chandgeCurrentPageHandler}

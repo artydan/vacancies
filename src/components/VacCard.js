@@ -1,53 +1,55 @@
 import React from "react";
 import "../global.css";
 
-function Vaccard({ vacancie, openVacancieHandler }) {
+function Vaccard({ vacancy, openVacancyHandler }) {
   return (
     <div>
-      <div className="vacCard">
-        <div className="vacName">{vacancie.name}</div>
-        {vacancie.snippet?.responsibility && (
-          <div className="vacResp">{vacancie.snippet?.responsibility}</div>
+      <div className="vacancy_Card">
+        <div className="vacancy_Card_Name">{vacancy.name}</div>
+        {vacancy.snippet?.responsibility && (
+          <div className="vacancy_Card_Responsibility">
+            {vacancy.snippet?.responsibility}
+          </div>
         )}
-        {vacancie.employer.logo_urls?.original && (
-          <div className="logo">
+        {vacancy.employer.logo_urls?.original && (
+          <div className="vacancy_Card_Logo_Wrapper">
             <img
-              className="imLogo"
-              src={vacancie.employer.logo_urls?.original}
-              alt="logo"
+              className="vacancy_Card_Logo"
+              src={vacancy.employer.logo_urls?.original}
+              alt="company_Logo"
             />
           </div>
         )}
-        {(vacancie.salary?.from && vacancie.salary?.to && (
-          <div className="vacSalary">
-            {vacancie.salary?.from.toLocaleString("ru-RU")} -{" "}
-            {vacancie.salary?.to.toLocaleString("ru-RU")}{" "}
-            {vacancie.salary?.currency === "RUR"
+        {(vacancy.salary?.from && vacancy.salary?.to && (
+          <div className="vacancy_Card_Salary">
+            {vacancy.salary?.from.toLocaleString("ru-RU")} -{" "}
+            {vacancy.salary?.to.toLocaleString("ru-RU")}{" "}
+            {vacancy.salary?.currency === "RUR"
               ? "RUB"
-              : vacancie.salary?.currency}
+              : vacancy.salary?.currency}
           </div>
         )) ||
-          (vacancie.salary?.from && (
-            <div className="vacSalary">
-              {vacancie.salary?.from.toLocaleString("ru-RU")}{" "}
-              {vacancie.salary?.currency === "RUR"
+          (vacancy.salary?.from && (
+            <div className="vacancy_Card_Salary">
+              {vacancy.salary?.from.toLocaleString("ru-RU")}{" "}
+              {vacancy.salary?.currency === "RUR"
                 ? "RUB"
-                : vacancie.salary?.currency}
+                : vacancy.salary?.currency}
             </div>
           )) ||
-          (vacancie.salary?.to && (
-            <div className="vacSalary">
-              {vacancie.salary?.to.toLocaleString("ru-RU")}{" "}
-              {vacancie.salary?.currency === "RUR"
+          (vacancy.salary?.to && (
+            <div className="vacancy_Card_Salary">
+              {vacancy.salary?.to.toLocaleString("ru-RU")}{" "}
+              {vacancy.salary?.currency === "RUR"
                 ? "RUB"
-                : vacancie.salary?.currency}
+                : vacancy.salary?.currency}
             </div>
           ))}
-        <div className="vacCity"> {vacancie.address?.city}</div>
+        <div className="vacancy_Card_City"> {vacancy.address?.city}</div>
         <div className="btn_wrapper">
           <button
-            className="btn_vacCard"
-            onClick={() => openVacancieHandler(vacancie)}
+            className="vacancy_Card_Btn"
+            onClick={() => openVacancyHandler(vacancy)}
           >
             Подробнее
           </button>

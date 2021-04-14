@@ -13,7 +13,7 @@
   margin: 5px;
 }
 
-.vacCard {
+.vacancy_Card {
   margin-bottom: 20px;
   display: grid;
   grid-gap: 10px;
@@ -28,7 +28,7 @@
   border: 1px solid #e7e7e7;
 }
 
-.vacName {
+.vacancy_Card_Name {
   display: flex;
   justify-content: flex-start;
   font-size: 17px;
@@ -37,11 +37,32 @@
   margin-bottom: 3px;
 }
 
-.vacSalary {
+.vacancy_Card_Salary{
   display: flex;
   justify-content: flex-end;
   color: #4682b4;
   grid-area: vacs;
+}
+
+.vacancy_Card_Responsibility{
+  color: #333;
+  font-size: 16px;
+  margin-top: 4px;
+  grid-area:vacRes;
+}
+
+.vacancy_Card_City { 
+  display: flex;
+  justify-content: flex-start;
+  color: #999;
+  font-size: 16px;
+  grid-area: vacC;
+  margin-bottom: 4px;
+}
+
+.vacancy_Card_Logo {
+  max-width: 60;
+  max-height: 30px;
 }
 
 .closePngwrapper {
@@ -85,7 +106,7 @@
   grid-area: btn;
 }
 
-.btn_vacCard {
+.vacancy_Card_Btn {
   background-color: #6633ff;
   color: #fff;
   border: 1px solid #bbb;
@@ -100,18 +121,9 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.btn_vacCard:hover {
+.vacancy_Card_Btn:hover {
   background-color: #333399;
   color: #bbb;
-}
-
-.vacCity { 
-  display: flex;
-  justify-content: flex-start;
-  color: #999;
-  font-size: 16px;
-  grid-area: vacC;
-  margin-bottom: 4px;
 }
 
 @keyframes showModal {
@@ -152,7 +164,31 @@
   overflow-y: scroll;
 } 
 
-.vacInfo{
+.vacancy_Name{
+  margin-top: 5px;
+}
+
+.vacancy_Salary {
+  margin-top: 5px;
+}
+
+.vacancy_Busyness{
+  margin-top: 5px;
+}
+
+.vacancy_Address {
+  margin-top: 5px;
+}
+
+.vacancy_Requirement {
+  margin-top: 5px;
+}
+
+.vacancy_Responsobility {
+  margin-top: 5px;
+}
+
+.vacancy_Experience {
   margin-top: 5px;
 }
 
@@ -164,33 +200,20 @@
   border-bottom: 1px solid #4682b4;
 }
 
-.imLogo {
-  max-width: 60;
-  max-height: 30px;
-}
-
-.logo {
+.vacancy_Card_Logo_Wrapper{
   grid-area: logo;
   display: flex;
   justify-content: flex-end;
 }
 
-.logoModal {
-  max-width: 70px;
-}
-
-.btn {
-  color: blue;
-}
-
-nav {
+.pagination_Wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-ul.pagination {
+.pagination_Btns_Wrapper {
   display: flex;
   padding-inline-start: 0;
 }
@@ -209,11 +232,6 @@ li {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   -webkit-tap-highlight-color: transparent;
 }
-.name_and_logo {
-  display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-}
 
 li:hover {
   background: #bbb;
@@ -222,6 +240,12 @@ li:hover {
 li.active {
   color: #4682b4;
   background: #e9e9e9;
+}
+
+.vacancy_Name_And_Logo {
+  display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .prev,
@@ -242,7 +266,7 @@ li.active {
   -webkit-tap-highlight-color: transparent;
 }
 
-.prev:active{
+.prev:active {
   background: #fff;
 }
 
@@ -258,23 +282,13 @@ li.active {
   background: #bbb;
 }
 
-.logomodal {
+.vacancy_Logo {
   margin-top: 20px;
-}
-
-.iamLogomodal {
   max-width: 100px;
   max-height: 60px;
 }
 
-.vacResp{
-  color: #333;
-  font-size: 16px;
-  margin-top: 4px;
-  grid-area:vacRes;
-}
-
-.phoneNum, .email {
+.phoneNum_Form, .email_Form {
   outline: none;
   display: block;
   width: 56%;
@@ -287,14 +301,19 @@ li.active {
   
 }
 
-.submit{
+.submit_Form_Wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  
+  align-items: center; 
 }
 
-.submitBtn{
+.submit_Form_Subheader {
+  margin-top: 70px;
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.submit_Btn {
   background-color: #6633ff;
   color: #fff;
   border: 1px solid #bbb;
@@ -309,18 +328,12 @@ li.active {
   -webkit-tap-highlight-color: transparent;
 }
 
-.subm{
-  margin-top: 70px;
-  font-size: 18px;
-  margin-bottom: 14px;
-}
-
-.submitBtn:hover {
+.submit_Btn:hover {
   background-color: #333399;
   color: #bbb;
 }
 
-.searchInput {
+.search_Input {
   margin-bottom: 10px;
   width: 50%;
   border: 2px solid #4682b4;
@@ -331,7 +344,7 @@ li.active {
   color: #444;
 }
 
-.inputwrapper {
+.search_Input_wrapper {
   display: flex;
   justify-content: flex-start;
 }

@@ -1,6 +1,7 @@
 import React from "react";
+import "../global.css";
 
-function Pagbuttons({
+function Pagination({
   currentPageNumber,
   chandgeCurrentPageHandler,
   pageNumbers,
@@ -8,11 +9,11 @@ function Pagbuttons({
   nextPageHandler,
 }) {
   return (
-    <nav>
+    <div className="pagination_Wrapper">
       <div className="prev" onClick={() => prevPageHandler()}>
         «
       </div>
-      <ul className="pagination">
+      <div className="pagination_Btns_Wrapper">
         {pageNumbers.map((pageNumber) => (
           <li
             key={pageNumber}
@@ -24,12 +25,12 @@ function Pagbuttons({
             {pageNumber}
           </li>
         ))}
-      </ul>
+      </div>
       <div className="next" onClick={() => nextPageHandler()}>
         »
       </div>
-    </nav>
+    </div>
   );
 }
 
-export default Pagbuttons;
+export default Pagination;

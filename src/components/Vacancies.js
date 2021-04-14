@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ModalView from "./ModalView.js";
 import VacCard from "./VacCard";
 import Pagination from "./Pagination";
-import DetailedVacancie from "./DetailedVacancie.js";
+import DetailedVacancy from "./DetailedVacancy.js";
 
 function Vacancies(props) {
   let [vacns, setVacn] = useState([]);
@@ -49,8 +49,8 @@ function Vacancies(props) {
     setIsModalOpen(false);
   };
 
-  const openVacancieHandler = (vacancie) => {
-    setSelectedVac(vacancie);
+  const openVacancyHandler = (vacancy) => {
+    setSelectedVac(vacancy);
     setIsModalOpen(true);
   };
 
@@ -60,10 +60,10 @@ function Vacancies(props) {
   }, [isModalOpen]);
   return (
     <div className="wrapper">
-      <div className="inputwrapper">
+      <div className="search_Inputinput_Wrapper">
         <input
           type="text"
-          className="searchInput"
+          className="search_Input"
           placeholder="Поиск по вакансиям"
           onChange={(event) => setSearchVac(event.target.value)}
         />
@@ -71,12 +71,12 @@ function Vacancies(props) {
       {vacOnPage.map((vacn) => (
         <VacCard
           key={vacn.id}
-          vacancie={vacn}
-          openVacancieHandler={openVacancieHandler}
+          vacancy={vacn}
+          openVacancyHandler={openVacancyHandler}
         />
       ))}
       <ModalView isModalOpen={isModalOpen} closeModal={closeModal}>
-        <DetailedVacancie vacancie={selectedVac} />
+        <DetailedVacancy vacancy={selectedVac} />
       </ModalView>
       <Pagination
         pageNumbers={pageNumbers}

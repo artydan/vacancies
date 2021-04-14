@@ -9,10 +9,6 @@
   margin: 0 auto; 
 }
 
-.marginWrap {
-  margin: 5px;
-}
-
 .vacancy_Card {
   margin-bottom: 20px;
   display: grid;
@@ -65,14 +61,14 @@
   max-height: 30px;
 }
 
-.closePngwrapper {
+.close_Wodal_Btn_Wrapper {
   display: flex;
   justify-content: flex-end;
   width: 20px;
 }  
 
-.closepng:before,
-.closepng:after {
+.close_modal_btn:before,
+.close_modal_btn:after {
   content: "";
   position: absolute;
   top: 14px;
@@ -82,20 +78,20 @@
   background: #4682b4;
 }
 
-.closepng:before {
+.close_modal_btn:before {
   transform: rotate(45deg);
 }
 
-.closepng:after { 
+.close_modal_btn:after { 
   transform: rotate(-45deg);
 }
 
-.closepng:hover::after {
+.close_modal_btn:hover::after {
   width: 25px;
   background: #438dca;
 }
 
-.closepng:hover:before {
+.close_modal_btn:hover:before {
   background: #438dca;
   width: 25px;
 }
@@ -136,7 +132,7 @@
   }
 }
 
-.modal {
+.modal_View {
   position: fixed;
   height: 100vh;
   top: 0;
@@ -149,7 +145,7 @@
   background-color: rgba(0, 0, 0, 0.041); 
 }
 
-.modalContent {
+.modal_Content {
   display: flex;
   padding: 10px;
   flex-direction: column;
@@ -192,7 +188,7 @@
   margin-top: 5px;
 }
 
-.modalTitle {
+.modal_Title {
   margin-top: 20px;
   text-align: center;
   font-size: 20px;

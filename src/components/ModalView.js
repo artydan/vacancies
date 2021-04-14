@@ -6,12 +6,12 @@ function ModalView({ isModalOpen, closeModal, children }) {
     return null;
   }
   return (
-    <div className="modal" onClick={() => closeModal()}>
-      <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-        <div className="closePngwrapper">
-          <div className="closepng" onClick={() => closeModal()}></div>
+    <div className="modal_View" onClick={() => closeModal()}>
+      <div className="modal_Content" onClick={(e) => e.stopPropagation()}>
+        <div className="close_Wodal_Btn_Wrapper">
+          <div className="close_modal_btn" onClick={() => closeModal()}></div>
         </div>
-        <div className="modalTitle">Подробная информация</div>
+        <div className="modal_Title">Подробная информация</div>
         {children}
         <div className="submit_Form_Wrapper">
           <div className="submit_Form_Subheader"> Откликнуться </div>

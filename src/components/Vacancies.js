@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ModalView from "./ModalView.js";
-import VacCard from "./VacCard";
+import VacancyCard from "./VacancyCard";
 import Pagination from "./Pagination";
 import DetailedVacancy from "./DetailedVacancy.js";
 
@@ -69,7 +69,7 @@ function Vacancies(props) {
         />
       </div>
       {vacOnPage.map((vacn) => (
-        <VacCard
+        <VacancyCard
           key={vacn.id}
           vacancy={vacn}
           openVacancyHandler={openVacancyHandler}

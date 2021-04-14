@@ -1,7 +1,7 @@
 import React from "react";
 import "../global.css";
 
-function Vaccard({ vacancy, openVacancyHandler }) {
+function VacancyCard({ vacancy, openVacancyHandler }) {
   return (
     <div>
       <div className="vacancy_Card">
@@ -59,4 +59,4 @@ function Vaccard({ vacancy, openVacancyHandler }) {
   );
 }
 
-export default Vaccard;
+export default VacancyCard;

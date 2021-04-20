@@ -1,7 +1,7 @@
 import React from "react";
 import "../global.css";
 
-function ModalView({ isModalOpen, closeModal, children,childrene }) {
+function ModalView({ isModalOpen, closeModal, children }) {
   if (!isModalOpen) {
     return null;
   }

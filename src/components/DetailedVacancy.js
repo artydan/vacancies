@@ -1,8 +1,9 @@
 import React from "react";
+import VacancySalary from "./VacancySalary"
 import { useState, useEffect } from "react";
 import "../global.css";
 
-function DetailedVacancy({ vacancy, children }) {
+function DetailedVacancy({ vacancy }) {
   const [detailedVacancyInfo, setdetailedVacancyInfo] = useState();
   useEffect(() => {
     fetch(`https://api.hh.ru/vacancies/${vacancy?.id}`)
@@ -25,7 +26,7 @@ function DetailedVacancy({ vacancy, children }) {
           />
         )}
       </div>
-      <div className=" vacancy_Salary"> Зарплата : {children}</div>
+      <div className=" vacancy_Salary"> Зарплата : <VacancySalary vacancy={vacancy}/></div>
       <div className="vacancy_Busyness">
         Занятость : {detailedVacancyInfo?.schedule?.name}
       </div>

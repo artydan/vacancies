@@ -19,21 +19,11 @@ function VacancySalary({ vacancy }) {
   };
   return (
     <div>
-      {(vacancy.salary?.from && vacancy.salary?.to && (
+      {(vacancy?.salary && (
         <div className="salary">
           {salary()} {salaryCurrency()}
         </div>
-      )) ||
-        (vacancy.salary?.from && (
-          <div className="salary">
-            {salary()} {salaryCurrency()}
-          </div>
-        )) ||
-        (vacancy.salary?.to && (
-          <div className="salary">
-            {salary()} {salaryCurrency()}
-          </div>
-        ))}
+      ))}
     </div>
   );
 }

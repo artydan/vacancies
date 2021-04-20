@@ -6,19 +6,19 @@ import DetailedVacancy from "./DetailedVacancy.js";
 import VacancySalary from "./VacancySalary.js";
 
 function Vacancies(props) {
-  let [vacns, setVacn] = useState([]);
-  let [searchVac, setSearchVac] = useState("");
+  let [allVacancies, setAllVacancies] = useState([]);
+  let [searchVacancies, setSearchVacancies] = useState("");
   let [selectedVac, setSelectedVac] = useState();
   let [isModalOpen, setIsModalOpen] = useState(false);
   let [perPage, setperpage] = useState(10);
   let [currentPageNumber, setCurrentPageNumber] = useState(1);
   let indexOFLast = currentPageNumber * perPage;
   let indexOgFirst = indexOFLast - perPage;
-  vacns = vacns.filter((val) =>
-    val.name.toLowerCase().startsWith(searchVac.toLowerCase())
+  allVacancies = allVacancies.filter((val) =>
+    val.name.toLowerCase().startsWith(searchVacancies.toLowerCase())
   );
-  let VacanciesOnPage = vacns.slice(indexOgFirst, indexOFLast);
-  let pagesCount = vacns.length / perPage;
+  let VacanciesOnPage = allVacancies.slice(indexOgFirst, indexOFLast);
+  let pagesCount = allVacancies.length / perPage;
   let pageNumbers = [];
   for (let i = 1; i <= pagesCount; i++) {
     pageNumbers.push(i);
@@ -43,7 +43,7 @@ function Vacancies(props) {
   useEffect(() => {
     fetch("https://api.hh.ru/vacancies?per_page=100")
       .then((res) => res.json())
-      .then((data) => setVacn(data.items));
+      .then((data) => setAllVacancies(data.items));
   }, []);
 
   const closeModal = () => {
@@ -67,7 +67,7 @@ function Vacancies(props) {
           type="text"
           className="search_Input"
           placeholder="Поиск по вакансиям"
-          onChange={(event) => setSearchVac(event.target.value)}
+          onChange={(event) => setSearchVacancies(event.target.value)}
         />
       </div>
       {VacanciesOnPage.map((vacn) => (
@@ -81,13 +81,11 @@ function Vacancies(props) {
       ))}
       <ModalView isModalOpen={isModalOpen} closeModal={closeModal}>
         <DetailedVacancy vacancy={selectedVac}>
-          <VacancySalary vacancy={selectedVac} />
         </DetailedVacancy>
       </ModalView>
       <Pagination
         pageNumbers={pageNumbers}
         chandgeCurrentPageHandler={chandgeCurrentPageHandler}
-        className="pagBtn"
         currentPageNumber={currentPageNumber}
         prevPageHandler={prevPageHandler}
         nextPageHandler={nextPageHandler}

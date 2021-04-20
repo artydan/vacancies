@@ -17,7 +17,7 @@ function Vacancies(props) {
   vacns = vacns.filter((val) =>
     val.name.toLowerCase().startsWith(searchVac.toLowerCase())
   );
-  let vacOnPage = vacns.slice(indexOgFirst, indexOFLast);
+  let VacanciesOnPage = vacns.slice(indexOgFirst, indexOFLast);
   let pagesCount = vacns.length / perPage;
   let pageNumbers = [];
   for (let i = 1; i <= pagesCount; i++) {
@@ -59,10 +59,10 @@ function Vacancies(props) {
     const body = document.querySelector("body");
     body.style.overflow = isModalOpen === true ? "hidden" : "auto";
   }, [isModalOpen]);
-  
+
   return (
     <div className="wrapper">
-      <div className="search_Inputinput_Wrapper">
+      <div className="search_Input_Wrapper">
         <input
           type="text"
           className="search_Input"
@@ -70,7 +70,7 @@ function Vacancies(props) {
           onChange={(event) => setSearchVac(event.target.value)}
         />
       </div>
-      {vacOnPage.map((vacn) => (
+      {VacanciesOnPage.map((vacn) => (
         <VacancyCard
           key={vacn.id}
           vacancy={vacn}

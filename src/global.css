@@ -165,6 +165,7 @@
 }
 
 .vacancy_Salary {
+  display: flex;
   margin-top: 5px;
 }
 
@@ -343,4 +344,8 @@ li.active {
 .search_Input_wrapper {
   display: flex;
   justify-content: flex-start;
+}
+
+.salary {
+  margin-left: 3px;
 }

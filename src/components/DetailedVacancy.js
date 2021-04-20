@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "../global.css";
 
-function DetailedVacancy({ vacancy }) {
+function DetailedVacancy({ vacancy, children }) {
   const [detailedVacancyInfo, setdetailedVacancyInfo] = useState();
   useEffect(() => {
     fetch(`https://api.hh.ru/vacancies/${vacancy?.id}`)
@@ -25,32 +25,7 @@ function DetailedVacancy({ vacancy }) {
           />
         )}
       </div>
-      {(detailedVacancyInfo?.salary?.from &&
-        detailedVacancyInfo?.salary?.to && (
-          <div className=" vacancy_Salary">
-            Зарплата: {detailedVacancyInfo.salary?.from.toLocaleString("ru-RU")}{" "}
-            - {detailedVacancyInfo.salary?.to.toLocaleString("ru-RU")}{" "}
-            {detailedVacancyInfo.salary?.currency === "RUR"
-              ? "RUB"
-              : detailedVacancyInfo.salary?.currency}
-          </div>
-        )) ||
-        (detailedVacancyInfo?.salary?.from && (
-          <div className=" vacancy_Salary">
-            Зарплата: {detailedVacancyInfo.salary?.from.toLocaleString("ru-RU")}{" "}
-            {detailedVacancyInfo.salary?.currency === "RUR"
-              ? "RUB"
-              : detailedVacancyInfo.salary?.currency}
-          </div>
-        )) ||
-        (detailedVacancyInfo?.salary?.to && (
-          <div className="vacancy_Salary">
-            Зарплата : {detailedVacancyInfo.salary?.to.toLocaleString("ru-RU")}{" "}
-            {detailedVacancyInfo.salary?.currency === "RUR"
-              ? "RUB"
-              : detailedVacancyInfo.salary?.currency}
-          </div>
-        ))}
+      <div className=" vacancy_Salary"> Зарплата : {children}</div>
       <div className="vacancy_Busyness">
         Занятость : {detailedVacancyInfo?.schedule?.name}
       </div>

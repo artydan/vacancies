@@ -1,7 +1,7 @@
 import React from "react";
 import "../global.css";
 
-function VacancyCard({ vacancy, openVacancyHandler }) {
+function VacancyCard({ vacancy, openVacancyHandler, children }) {
   return (
     <div>
       <div className="vacancy_Card">
@@ -20,31 +20,7 @@ function VacancyCard({ vacancy, openVacancyHandler }) {
             />
           </div>
         )}
-        {(vacancy.salary?.from && vacancy.salary?.to && (
-          <div className="vacancy_Card_Salary">
-            {vacancy.salary?.from.toLocaleString("ru-RU")} -{" "}
-            {vacancy.salary?.to.toLocaleString("ru-RU")}{" "}
-            {vacancy.salary?.currency === "RUR"
-              ? "RUB"
-              : vacancy.salary?.currency}
-          </div>
-        )) ||
-          (vacancy.salary?.from && (
-            <div className="vacancy_Card_Salary">
-              {vacancy.salary?.from.toLocaleString("ru-RU")}{" "}
-              {vacancy.salary?.currency === "RUR"
-                ? "RUB"
-                : vacancy.salary?.currency}
-            </div>
-          )) ||
-          (vacancy.salary?.to && (
-            <div className="vacancy_Card_Salary">
-              {vacancy.salary?.to.toLocaleString("ru-RU")}{" "}
-              {vacancy.salary?.currency === "RUR"
-                ? "RUB"
-                : vacancy.salary?.currency}
-            </div>
-          ))}
+        <div className="vacancy_Card_Salary">{children}</div>
         <div className="vacancy_Card_City"> {vacancy.address?.city}</div>
         <div className="btn_wrapper">
           <button

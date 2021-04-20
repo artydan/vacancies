@@ -3,6 +3,7 @@ import ModalView from "./ModalView.js";
 import VacancyCard from "./VacancyCard";
 import Pagination from "./Pagination";
 import DetailedVacancy from "./DetailedVacancy.js";
+import VacancySalary from "./VacancySalary.js";
 
 function Vacancies(props) {
   let [vacns, setVacn] = useState([]);
@@ -58,6 +59,7 @@ function Vacancies(props) {
     const body = document.querySelector("body");
     body.style.overflow = isModalOpen === true ? "hidden" : "auto";
   }, [isModalOpen]);
+  
   return (
     <div className="wrapper">
       <div className="search_Inputinput_Wrapper">
@@ -73,10 +75,14 @@ function Vacancies(props) {
           key={vacn.id}
           vacancy={vacn}
           openVacancyHandler={openVacancyHandler}
-        />
+        >
+          <VacancySalary vacancy={vacn} />
+        </VacancyCard>
       ))}
       <ModalView isModalOpen={isModalOpen} closeModal={closeModal}>
-        <DetailedVacancy vacancy={selectedVac} />
+        <DetailedVacancy vacancy={selectedVac}>
+          <VacancySalary vacancy={selectedVac} />
+        </DetailedVacancy>
       </ModalView>
       <Pagination
         pageNumbers={pageNumbers}

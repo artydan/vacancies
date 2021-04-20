@@ -1,5 +1,5 @@
 import React from "react";
-import VacancySalary from "./VacancySalary"
+import VacancySalary from "./VacancySalary";
 import { useState, useEffect } from "react";
 import "../global.css";
 
@@ -26,7 +26,10 @@ function DetailedVacancy({ vacancy }) {
           />
         )}
       </div>
-      <div className=" vacancy_Salary"> Зарплата : <VacancySalary vacancy={vacancy}/></div>
+      <div className=" vacancy_Salary">
+        {" "}
+        Зарплата : <VacancySalary vacancy={vacancy} />
+      </div>
       <div className="vacancy_Busyness">
         Занятость : {detailedVacancyInfo?.schedule?.name}
       </div>

@@ -70,18 +70,17 @@ function Vacancies(props) {
           onChange={(event) => setSearchVacancies(event.target.value)}
         />
       </div>
-      {VacanciesOnPage.map((vacn) => (
+      {VacanciesOnPage.map((vacancy) => (
         <VacancyCard
-          key={vacn.id}
-          vacancy={vacn}
+          key={vacancy.id}
+          vacancy={vacancy}
           openVacancyHandler={openVacancyHandler}
         >
-          <VacancySalary vacancy={vacn} />
+          <VacancySalary vacancy={vacancy} />
         </VacancyCard>
       ))}
       <ModalView isModalOpen={isModalOpen} closeModal={closeModal}>
-        <DetailedVacancy vacancy={selectedVac}>
-        </DetailedVacancy>
+        <DetailedVacancy vacancy={selectedVac}></DetailedVacancy>
       </ModalView>
       <Pagination
         pageNumbers={pageNumbers}

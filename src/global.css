@@ -158,6 +158,7 @@
     border-radius: 10px;
     color: #444;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .info_In_Modal {
@@ -360,4 +361,19 @@
 }
 .detiledVacancyInfo_title {
     font-weight: bold;
+}
+
+@media (max-width: 526px) {
+    .modal_Content {
+        padding: 0 15px 10px 15px;
+        width: 100vh;
+        font-size: 14px;
+    }
+    .vacancy_Logo {
+        max-width: 70px;
+    }
+    .phoneNum_Form,
+    .email_Form {
+        width: 50%;
+    }
 }

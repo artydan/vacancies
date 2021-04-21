@@ -3,3 +3,9 @@ export async function getVacancies(count) {
         .then((res) => res.json())
         .then((data) => data.items);
 }
+
+export async function getDetailedVacancieInfo(vacancyId) {
+    return await fetch(`https://api.hh.ru/vacancies/${vacancyId}`)
+        .then((res) => res.json())
+        .then((result) => result);
+}

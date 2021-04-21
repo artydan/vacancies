@@ -51,24 +51,6 @@ function DetailedVacancy({ vacancy }) {
                 </div>
             )}
             <JsxParser jsx={detailedVacancyInfo?.description} />
-            {vacancy?.snippet?.requirement && (
-                <div className="vacancy_Requirement">
-                    <span className="detiledVacancyInfo_title">
-                        {" "}
-                        Tребования
-                    </span>{" "}
-                    : {vacancy.snippet?.requirement}
-                </div>
-            )}
-            {vacancy?.snippet?.responsibility && (
-                <div className=" vacancy_Responsobility">
-                    <span className="detiledVacancyInfo_title">
-                        {" "}
-                        Обязанности
-                    </span>{" "}
-                    : {vacancy?.snippet?.responsibility}
-                </div>
-            )}
             {detailedVacancyInfo?.experience?.name && (
                 <div className="vacancy_Experience">
                     <span className="detiledVacancyInfo_title">

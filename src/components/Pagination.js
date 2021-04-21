@@ -15,17 +15,17 @@ function Pagination({
             </div>
             <div className="pagination_Btns_Wrapper">
                 {pageNumbers.map((pageNumber) => (
-                    <li
+                    <div
                         key={pageNumber}
                         className={
                             pageNumber === currentPageNumber
-                                ? "active"
-                                : " disabled"
+                                ? "pagination_btns_active"
+                                : "pagination_btns_disabled"
                         }
                         onClick={() => chandgeCurrentPageHandler(pageNumber)}
                     >
                         {pageNumber}
-                    </li>
+                    </div>
                 ))}
             </div>
             <div className="next" onClick={() => nextPageHandler()}>

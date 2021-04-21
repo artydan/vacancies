@@ -165,27 +165,27 @@
 }
 
 .vacancy_Employer_Name {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .vacancy_Name_in_modal {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 .vacancy_Salary {
     display: flex;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .vacancy_Busyness {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .vacancy_Address {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .vacancy_Experience {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .modal_Title {

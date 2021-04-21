@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import ModalView from "./ModalView.js";
+import ModalView from "./ModalView";
 import VacancyCard from "./VacancyCard";
 import Pagination from "./Pagination";
-import DetailedVacancy from "./DetailedVacancy.js";
-import VacancySalary from "./VacancySalary.js";
+import DetailedVacancy from "./DetailedVacancy";
+import { getVacancies } from "../services/hhService";
 
 function Vacancies(props) {
     let [allVacancies, setAllVacancies] = useState([]);
@@ -14,7 +14,7 @@ function Vacancies(props) {
     let [currentPageNumber, setCurrentPageNumber] = useState(1);
     let indexOFLast = currentPageNumber * perPage;
     let indexOgFirst = indexOFLast - perPage;
-    allVacancies = allVacancies.filter((val) =>
+    allVacancies = allVacancies?.filter((val) =>
         val.name.toLowerCase().startsWith(searchVacancies.toLowerCase())
     );
     let VacanciesOnPage = allVacancies.slice(indexOgFirst, indexOFLast);
@@ -41,9 +41,7 @@ function Vacancies(props) {
     };
 
     useEffect(() => {
-        fetch("https://api.hh.ru/vacancies?per_page=100")
-            .then((res) => res.json())
-            .then((data) => setAllVacancies(data.items));
+        getVacancies(100).then((vacancies) => setAllVacancies(vacancies));
     }, []);
 
     const closeModal = () => {
@@ -75,9 +73,7 @@ function Vacancies(props) {
                     key={vacancy.id}
                     vacancy={vacancy}
                     openVacancyHandler={openVacancyHandler}
-                >
-                    <VacancySalary vacancy={vacancy} />
-                </VacancyCard>
+                ></VacancyCard>
             ))}
             <ModalView isModalOpen={isModalOpen} closeModal={closeModal}>
                 <DetailedVacancy vacancy={selectedVac}></DetailedVacancy>

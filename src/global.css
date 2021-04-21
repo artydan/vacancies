@@ -348,4 +348,9 @@ li.active {
 
 .salary {
     margin-left: 3px;
+    margin-top: 2px;
+}
+.detiledVacancyInfo_title {
+    font-size: 17px;
+    color: #222;
 }

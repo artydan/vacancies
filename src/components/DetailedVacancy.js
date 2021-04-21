@@ -10,12 +10,18 @@ function DetailedVacancy({ vacancy }) {
             .then((res) => res.json())
             .then((result) => setdetailedVacancyInfo(result));
     }, [vacancy]);
+
     return (
         <div className="vacancy_info">
             <div className="vacancy_Name_And_Logo">
                 {detailedVacancyInfo?.employer && (
                     <div className="vacancy_Name ">
-                        Работадатель : "{detailedVacancyInfo.employer?.name}"
+                        <span className="detiledVacancyInfo_title">
+                            Работадатель:
+                        </span>{" "}
+                        <span style={{ marginLeft: "8px" }}>
+                            {detailedVacancyInfo.employer?.name}
+                        </span>
                     </div>
                 )}
                 {detailedVacancyInfo?.employer.logo_urls?.original && (
@@ -26,33 +32,49 @@ function DetailedVacancy({ vacancy }) {
                     />
                 )}
             </div>
+
             <div className=" vacancy_Salary">
-                {" "}
-                Зарплата : <VacancySalary vacancy={vacancy} />
+                <span className="detiledVacancyInfo_title">Зарплата :</span>{" "}
+                <VacancySalary salary={vacancy.salary} />
             </div>
             <div className="vacancy_Busyness">
-                Занятость : {detailedVacancyInfo?.schedule?.name}
+                <span className="detiledVacancyInfo_title">Занятость</span> :{" "}
+                {detailedVacancyInfo?.schedule?.name}
             </div>
             {detailedVacancyInfo?.address && (
                 <div className=" vacancy_Address">
-                    Адрес : {detailedVacancyInfo.address?.city} ,{" "}
+                    <span className="detiledVacancyInfo_title">Адрес</span> :{" "}
+                    {detailedVacancyInfo.address?.city} ,{" "}
                     {detailedVacancyInfo.address?.street} ,
                     {detailedVacancyInfo.address?.building}
                 </div>
             )}
+            {detailedVacancyInfo ??
+                React.createElement(detailedVacancyInfo?.description)}
             {vacancy?.snippet?.requirement && (
                 <div className="vacancy_Requirement">
-                    Требования : {vacancy.snippet?.requirement}
+                    <span className="detiledVacancyInfo_title">
+                        {" "}
+                        Tребования
+                    </span>{" "}
+                    : {vacancy.snippet?.requirement}
                 </div>
             )}
             {vacancy?.snippet?.responsibility && (
                 <div className=" vacancy_Responsobility">
-                    Обязанности : {vacancy?.snippet?.responsibility}
+                    <span className="detiledVacancyInfo_title">
+                        {" "}
+                        Обязанности
+                    </span>{" "}
+                    : {vacancy?.snippet?.responsibility}
                 </div>
             )}
             {detailedVacancyInfo?.experience?.name && (
                 <div className="vacancy_Experience">
-                    Опыт работы : {detailedVacancyInfo.experience?.name}
+                    <span className="detiledVacancyInfo_title">
+                        Опыт работы
+                    </span>{" "}
+                    : {detailedVacancyInfo.experience?.name}
                 </div>
             )}
         </div>

@@ -1,7 +1,8 @@
 import React from "react";
 import "../global.css";
+import VacancySalary from "./VacancySalary";
 
-function VacancyCard({ vacancy, openVacancyHandler, children }) {
+function VacancyCard({ vacancy, openVacancyHandler }) {
     return (
         <div>
             <div className="vacancy_Card">
@@ -20,7 +21,9 @@ function VacancyCard({ vacancy, openVacancyHandler, children }) {
                         />
                     </div>
                 )}
-                <div className="vacancy_Card_Salary">{children}</div>
+                <div className="vacancy_Card_Salary">
+                    <VacancySalary salary={vacancy.salary} />
+                </div>
                 <div className="vacancy_Card_City">
                     {" "}
                     {vacancy.address?.city}

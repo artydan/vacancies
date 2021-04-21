@@ -64,9 +64,9 @@ function DetailedVacancy({ vacancy }) {
             )}
             <div className="vacancy_Busyness">
                 <span className="detiledVacancyInfo_title">Занятость:</span>
-                <sapn className="info_In_Modal">
+                <span className="info_In_Modal">
                     {detailedVacancyInfo?.schedule?.name}
-                </sapn>
+                </span>
             </div>
             <JsxParser jsx={detailedVacancyInfo?.description} />
         </div>

@@ -15,13 +15,13 @@ function DetailedVacancy({ vacancy }) {
 
     return (
         <div className="vacancy_info">
-            <div className="vacancy_Name_And_Logo">
+            <div className="vacancy_EmployerName_And_Logo">
                 {detailedVacancyInfo?.employer && (
-                    <div className="vacancy_Name ">
+                    <div className="vacancy_Employer_Name ">
                         <span className="detiledVacancyInfo_title">
                             Работадатель:
-                        </span>{" "}
-                        <span style={{ marginLeft: "8px" }}>
+                        </span>
+                        <span className="info_In_Modal">
                             {detailedVacancyInfo.employer?.name}
                         </span>
                     </div>
@@ -34,30 +34,40 @@ function DetailedVacancy({ vacancy }) {
                     />
                 )}
             </div>
+            <div className="vacancy_Name_in_modal">
+                <span className="detiledVacancyInfo_title">Требуется:</span>
+                <span className="info_In_Modal">
+                    {detailedVacancyInfo?.name}
+                </span>
+            </div>
+            {detailedVacancyInfo?.address && (
+                <div className=" vacancy_Address">
+                    <span className="detiledVacancyInfo_title">Адрес:</span>
+                    <span className="info_In_Modal">{`${detailedVacancyInfo.address?.city} , ${detailedVacancyInfo.address?.street},${detailedVacancyInfo.address?.building}`}</span>
+                </div>
+            )}
             <div className=" vacancy_Salary">
-                <span className="detiledVacancyInfo_title">Зарплата :</span>{" "}
-                <VacancySalary salary={vacancy.salary} />
+                <span className="detiledVacancyInfo_title">Зарплата:</span>
+                <span className="info_In_Modal">
+                    <VacancySalary salary={vacancy.salary} />
+                </span>
             </div>
             {detailedVacancyInfo?.experience?.name && (
                 <div className="vacancy_Experience">
                     <span className="detiledVacancyInfo_title">
-                        Опыт работы
-                    </span>{" "}
-                    : {detailedVacancyInfo.experience?.name}
+                        Опыт работы:
+                    </span>
+                    <span className="info_In_Modal">
+                        {detailedVacancyInfo.experience?.name}
+                    </span>
                 </div>
             )}
             <div className="vacancy_Busyness">
-                <span className="detiledVacancyInfo_title">Занятость</span> :{" "}
-                {detailedVacancyInfo?.schedule?.name}
+                <span className="detiledVacancyInfo_title">Занятость:</span>
+                <sapn className="info_In_Modal">
+                    {detailedVacancyInfo?.schedule?.name}
+                </sapn>
             </div>
-            {detailedVacancyInfo?.address && (
-                <div className=" vacancy_Address">
-                    <span className="detiledVacancyInfo_title">Адрес</span> :{" "}
-                    {detailedVacancyInfo.address?.city},{" "}
-                    {detailedVacancyInfo.address?.street} ,
-                    {detailedVacancyInfo.address?.building}
-                </div>
-            )}
             <JsxParser jsx={detailedVacancyInfo?.description} />
         </div>
     );

@@ -38,6 +38,14 @@ function DetailedVacancy({ vacancy }) {
                 <span className="detiledVacancyInfo_title">Зарплата :</span>{" "}
                 <VacancySalary salary={vacancy.salary} />
             </div>
+            {detailedVacancyInfo?.experience?.name && (
+                <div className="vacancy_Experience">
+                    <span className="detiledVacancyInfo_title">
+                        Опыт работы
+                    </span>{" "}
+                    : {detailedVacancyInfo.experience?.name}
+                </div>
+            )}
             <div className="vacancy_Busyness">
                 <span className="detiledVacancyInfo_title">Занятость</span> :{" "}
                 {detailedVacancyInfo?.schedule?.name}
@@ -51,14 +59,6 @@ function DetailedVacancy({ vacancy }) {
                 </div>
             )}
             <JsxParser jsx={detailedVacancyInfo?.description} />
-            {detailedVacancyInfo?.experience?.name && (
-                <div className="vacancy_Experience">
-                    <span className="detiledVacancyInfo_title">
-                        Опыт работы
-                    </span>{" "}
-                    : {detailedVacancyInfo.experience?.name}
-                </div>
-            )}
         </div>
     );
 }

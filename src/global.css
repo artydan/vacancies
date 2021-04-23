@@ -384,10 +384,12 @@
         width: 100vh;
         font-size: 14px;
     }
+
     .vacancy_Card:hover {
         transform: none;
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
     }
+
     .vacancy_Logo {
         max-width: 70px;
     }
@@ -395,6 +397,10 @@
     .phoneNum_Form,
     .email_Form {
         width: 50%;
+    }
+
+    .vacancy_Card_Responsibility {
+        font-size: 13px;
     }
 }
 

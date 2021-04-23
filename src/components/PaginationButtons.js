@@ -1,13 +1,17 @@
 import React from "react";
 import "../global.css";
 
-function Pagination({
+function PaginationButtons({
     currentPageNumber,
     chandgeCurrentPageHandler,
     pageNumbers,
     prevPageHandler,
     nextPageHandler,
 }) {
+    if (pageNumbers < 2) {
+        return null;
+    }
+
     return (
         <div className="pagination_Wrapper">
             <div className="prev" onClick={() => prevPageHandler()}>
@@ -35,4 +39,4 @@ function Pagination({
     );
 }
 
-export default Pagination;
+export default PaginationButtons;

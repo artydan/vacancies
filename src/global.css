@@ -4,7 +4,7 @@
     text-decoration: none;
 }
 
-.wrapper {
+.App {
     max-width: 790px;
     margin: 0 auto;
 }
@@ -376,4 +376,21 @@
     .email_Form {
         width: 50%;
     }
+}
+
+.loading {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.nothing_find_wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.noting_find_text {
+    margin-left: 10px;
 }

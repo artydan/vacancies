@@ -20,11 +20,9 @@ function VacancySalary({ salary }) {
                 result = localeSalary(salary.to);
             }
         }
-
         if (result) {
             result += ` ${salaryCurrency()}`;
         }
-
         return result;
     };
 

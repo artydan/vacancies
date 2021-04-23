@@ -1,5 +1,6 @@
 import React from "react";
 import "../global.css";
+import search from "../images/search_Icon.gif";
 
 function SearchInput({ onSearchValueChanged, data }) {
     if (data.length === 0) {
@@ -17,6 +18,7 @@ function SearchInput({ onSearchValueChanged, data }) {
                         onSearchValueChanged(event.target.value)
                     }
                 />
+                <img className="search_icon" src={search}></img>
             </div>
         </>
     );

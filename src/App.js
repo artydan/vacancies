@@ -27,7 +27,11 @@ function App() {
                 onSearchValueChanged={setSearchValue}
                 data={vacancies}
             />
-            <VacancyView vacancies={vacanciesOnPage} data={vacancies} />
+            <VacancyView
+                vacancies={vacanciesOnPage}
+                data={vacancies}
+                searchValue={searchValue}
+            />
             <PaginationView
                 itemsOnPageChanged={setVacanciesOnPage}
                 items={searchedVacancies}

@@ -3,7 +3,7 @@ import VacancyCard from "./VacancyCard";
 import VacancyModal from "./VacancyModal";
 import nothingFind from "../images/nothing.png";
 
-function VacancyView({ vacancies, data }) {
+function VacancyView({ vacancies, data, searchValue }) {
     const [selectedVacancy, setSelectedVacancy] = useState();
     const [isModalOpen, setIsModalOpen] = useState(false);
     const closeModal = () => {
@@ -18,7 +18,7 @@ function VacancyView({ vacancies, data }) {
         return <div className="loading">Loading...</div>;
     }
 
-    if (vacancies.length === 0) {
+    if (vacancies.length === 0 && searchValue !== "") {
         return (
             <div className="nothing_find_wrapper">
                 <img

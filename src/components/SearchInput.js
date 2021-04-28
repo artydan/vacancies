@@ -18,7 +18,11 @@ function SearchInput({ onSearchValueChanged, data }) {
                         onSearchValueChanged(event.target.value)
                     }
                 />
-                <img className="search_icon" src={search}></img>
+                <img
+                    className="search_icon"
+                    alt="search icon"
+                    src={search}
+                ></img>
             </div>
         </>
     );

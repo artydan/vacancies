@@ -16,7 +16,7 @@ function App() {
     useEffect(() => {
         setSearchedVacancies(
             vacancies?.filter((val) =>
-                val.name.toLowerCase().startsWith(searchValue.toLowerCase())
+                val.name.toLowerCase().includes(searchValue.toLowerCase())
             )
         );
     }, [searchValue, vacancies]);
